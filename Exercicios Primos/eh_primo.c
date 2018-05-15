@@ -3,11 +3,11 @@ int eh_primo (int n){
 	int primo =1,i;
 	for (i=2;i<= n/2 ; i++){
     if ( n % i==0){
-	  primo=0;}
-	else{ primo = 1;}	
-	return primo;
-	}
+	 return(0);}
+    }
+    return(1);
 }
+
 int main() {
 
 int PRIMO, N;
@@ -16,10 +16,9 @@ int PRIMO, N;
 
 PRIMO = eh_primo(N);
 
-if (PRIMO==1){
-    printf ("E primo\n");}
-else{
+if (eh_primo(N)==0){
     printf ("Nao e primo\n");}
-   
+else{
+    printf ("E primo\n");}
 }
 
