@@ -15,6 +15,7 @@ int main(){
 	        conta = &minha_conta2;
             }
             compra(conta, compras[i]);
+	    printf ("Valor da compra: %d\n",compras[i]);
 	    printf ("Saldo das contas apos a compra: %d %d\n",minha_conta1,minha_conta2);
         }
 }
