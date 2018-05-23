@@ -3,7 +3,8 @@
 void preenche(int* vec, int n){
     int i, v;
     for(i = 0; i < n; i++){
-       scanf("%d", &*(vec + i));
+       scanf("%d", &v);
+       *(vec + i) = v;
     }
 }
 
