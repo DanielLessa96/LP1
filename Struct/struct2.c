@@ -13,24 +13,26 @@ struct ficha_de_aluno{
     struct disciplina dis;
 };
 
+void preenche(struct disciplina* d) {
+    printf("Disciplina: "); 
+    scanf ("%s", (*d).disciplina);
+    printf("Informe a 1a. nota: ");
+    scanf("%f", &(*d).nota_prova1);
+    printf("Informe a 2a. nota: ");
+    scanf("%f", &(*d).nota_prova2); 
+}
 
-void preenche(struct ficha_de_aluno* al) {
+void preenche2(struct ficha_de_aluno* al) {
     printf("Nome do aluno: ");
     scanf ("%s", (*al).nome);
     printf("Matricula: "); 
     scanf ("%li", &(*al).matricula);
+    preenche (&(*al).dis);
     
 }
  
-void preenche2(struct ficha_de_aluno* al) {
-    preenche(al);
-    printf("Disciplina: "); 
-    scanf ("%s", (*al).dis.disciplina);
-    printf("Informe a 1a. nota: ");
-    scanf("%f", &(*al).dis.nota_prova1);
-    printf("Informe a 2a. nota: ");
-    scanf("%f", &(*al).dis.nota_prova2); 
-}
+
+
 int main(){
     struct ficha_de_aluno al;
     preenche2 (&al);
@@ -40,5 +42,6 @@ int main(){
     printf("Disciplina: %s\n", al.dis.disciplina);
     printf("Nota da Prova 1: %.2f\n" , al.dis.nota_prova1);
     printf("Nota da Prova 2: %.2f\n" , al.dis.nota_prova2);
+    printf("Media: %.2f\n" , (al.dis.nota_prova1 + al.dis.nota_prova2)/2);
     return(0);
 } 
