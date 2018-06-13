@@ -30,23 +30,29 @@ void ler_per(struct Personagem* per){
     ler_pos(& (*per).p);
 }
 
+
 int main(){
-    int i,j,x,y,id;
-    int mat[L][C];
+    int i,j;
+    int mat[L][C] = {
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+    };
+    
+   
     struct Personagem per[10];
     for (i=0; i<L; i++){
         ler_per (&per[i]);
-        x = per[i].p.x;
-        y = per[i].p.y;
-        id = per[i].identidade;
-        for (j=0; j<C; j++){
-        	if (i == x && j == y){
-                mat[i][j] = id;
-            }else{
-            	mat[i][j]=0;
-		}
-        }
+        mat [per[i].p.x][per[i].p.y] = per[i].identidade;
     }
+      
     printf("  ");
     for (j=0; j<C; j++){
         printf("%d ",j);
@@ -65,5 +71,3 @@ int main(){
     }
     return(0); 
 }
-
-
