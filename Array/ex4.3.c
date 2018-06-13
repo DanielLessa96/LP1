@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 struct Pontos{
       int x;
@@ -22,13 +23,16 @@ void preenche_vetor(struct Pontos ps[10]){
 }
 struct Pontos mais_distante(struct Pontos ps[10]){
      int i;
+     float d[10],maior_distancia=0;
      struct Pontos maior_ponto = { 0,0 };
      for (i=0; i<=9; i++){
-         if (ps[i].x >= maior_ponto.x && ps[i].y >= maior_ponto.y || ps[i].y >= maior_ponto.y && ps[i].x >= maior_ponto.x){
-             maior_ponto = ps[i];
-         }
+        d[i] = sqrt ( pow(ps[i].x - 0,2) + pow(ps[i].y-0,2) ); 
+        if (d[i] > maior_distancia){
+        	maior_distancia = d[i];
+            maior_ponto = ps[i];
+        }
      } 
-     return maior_ponto;
+    return maior_ponto;
 }       
 
 int main(){
@@ -42,3 +46,11 @@ int main(){
       printf ("o ponto mais distante de (%d,%d) e: (%d,%d)\n",0,0,maior_ponto.x,maior_ponto.y);
       return(0); 
 }
+
+
+
+
+
+
+   
+
