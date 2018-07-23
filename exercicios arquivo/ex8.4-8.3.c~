@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+void escreva_string (FILE* f, char* str){
+     int i,j,k,tamanho;
+      for (i=0; i<3;i++){
+          printf("string:");
+          scanf("%s", str[i]);
+      }
+      for (j=0; j<3;j++){
+          tamanho = strlen(str[j]);
+          for (k=0; k<tamanho; k++){
+              fputc(str[j][k], f);
+          }
+      }
+}
+int main(){
+    char str[3][25];
+    FILE* f = fopen("/tmp/guest-Ut3TFE/Área de Trabalho/exercicios arquivo/arq8.3.txt", "w");
+    fclose(f);
+    return 0;
+} 
+
